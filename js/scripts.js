@@ -3,6 +3,15 @@ $(document).ready(function() {
     event.preventDefault();
     const inputSentence = $("#sentence").val();
     let sentenceArray = inputSentence.split(" ");
-    console.log(sentenceArray);
+    let newArray = [];
+
+    sentenceArray.forEach(function(element) {
+      if (element.length - 1 >= 3) {
+        newArray.push(element);
+      }
+    });
+    console.log(newArray);
+    let reverseArray = newArray.reverse();
+    alert(reverseArray.join(" "));
   });
 });
